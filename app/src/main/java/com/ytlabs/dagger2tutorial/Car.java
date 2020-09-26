@@ -7,14 +7,14 @@ import javax.inject.Inject;
 public class Car {
     private static final String TAG = "Car";
 
-    @Inject
-    public Engine engine;
+    private Engine engine;
     private Wheels wheels;
 
     // Inject annotation on constructor tells Dagger how to provide the
     // object of Car class
     @Inject
-    public Car(Wheels wheels) {
+    public Car(Engine engine, Wheels wheels) {
+        this.engine = engine;
         this.wheels = wheels;
     }
 

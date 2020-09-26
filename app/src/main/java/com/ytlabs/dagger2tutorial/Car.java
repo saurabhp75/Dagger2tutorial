@@ -18,7 +18,17 @@ public class Car {
         this.wheels = wheels;
     }
 
+    // Method injection: Needed when the instance of the object(this) is
+    // itself passed to the dependency(Remote). Constructor injection triggers
+    // field injection, which triggers method injection, hence this method is
+    // automatically called.
+    @Inject
+    public void enableRemote(Remote remote) {
+        remote.setListener(this);
+    }
+
     public void drive(){
         Log.d(TAG, "driving...");
     }
+
 }

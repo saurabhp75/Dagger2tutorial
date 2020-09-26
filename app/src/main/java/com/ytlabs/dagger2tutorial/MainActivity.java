@@ -13,8 +13,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // This will give a runtime time exception as "car" is not initialized
-        // We need to inject "car"
+        // Use Dagger CarComponent to provide the car object
+        CarComponent component = DaggerCarComponent.create();
+        car = component.getCar();
         car.drive();
     }
 }

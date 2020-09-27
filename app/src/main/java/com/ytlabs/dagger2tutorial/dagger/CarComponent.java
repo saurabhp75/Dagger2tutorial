@@ -4,11 +4,13 @@ import com.ytlabs.dagger2tutorial.MainActivity;
 import com.ytlabs.dagger2tutorial.car.Car;
 
 import javax.inject.Named;
+import javax.inject.Singleton;
 
 import dagger.BindsInstance;
 import dagger.Component;
 
 // Component creates and store the objects/instances and provides when needed
+@Singleton
 @Component(modules = {WheelsModule.class, PetrolEngineModule.class})
 public interface CarComponent {
 

@@ -15,8 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Tell Dagger that this field has to be injected
     // The field should be public so that Dagger can access it
-    @Inject
-    Car car;
+    @Inject Car car1, car2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         component.inject(this);
-        car.drive();
+        car1.drive();
+        car2.drive();
     }
 }

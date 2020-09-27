@@ -26,8 +26,10 @@ public class MainActivity extends AppCompatActivity {
         // Use Dagger CarComponent to inject the car field
         // Create method is available only if none of the modules in the component take
         // any argument in the constructor.
+        // horsepower will be added to the dependency graph and value of 100 will be
+        // taken whenever we need an integer.
         CarComponent component = DaggerCarComponent.builder()
-                .dieselEngineModule(new DieselEngineModule(100))
+                .horsePower(150)
                 .build();
 
         component.inject(this);

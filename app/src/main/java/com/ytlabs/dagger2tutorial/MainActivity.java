@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         // taken whenever we need an integer.
         CarComponent component = DaggerCarComponent.builder()
                 .horsePower(150)
+                .engineCapacity(1400)
                 .build();
 
         component.inject(this);

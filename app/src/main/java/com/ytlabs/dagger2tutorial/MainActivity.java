@@ -13,6 +13,10 @@ import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity {
 
+    // Tell Dagger that this field has to be injected
+    // The field should be public so that Dagger can access it
+    @Inject Car car1, car2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,19 +27,13 @@ public class MainActivity extends AppCompatActivity {
         // any argument in the constructor.
         // horsepower will be added to the dependency graph and value of 100 will be
         // taken whenever we need an integer.
-        CarComponent component1 = DaggerCarComponent.builder()
+        CarComponent component = DaggerCarComponent.builder()
                 .horsePower(150)
                 .engineCapacity(1400)
                 .build();
 
-        CarComponent component2 = DaggerCarComponent.builder()
-                .horsePower(150)
-                .engineCapacity(1400)
-                .build();
-
-        // This will give two different drivers as driver is singleton only
-        // within a component.
-        component1.getCar().drive();
-        component2.getCar().drive();
+        component.inject(this);
+        car1.drive();
+        car2.drive();
     }
 }

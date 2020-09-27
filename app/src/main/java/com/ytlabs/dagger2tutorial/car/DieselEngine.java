@@ -1,4 +1,4 @@
-package com.ytlabs.dagger2tutorial;
+package com.ytlabs.dagger2tutorial.car;
 
 import android.util.Log;
 

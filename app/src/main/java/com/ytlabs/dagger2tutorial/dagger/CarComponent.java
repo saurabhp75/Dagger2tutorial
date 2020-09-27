@@ -1,4 +1,7 @@
-package com.ytlabs.dagger2tutorial;
+package com.ytlabs.dagger2tutorial.dagger;
+
+import com.ytlabs.dagger2tutorial.MainActivity;
+import com.ytlabs.dagger2tutorial.car.Car;
 
 import dagger.Component;
 

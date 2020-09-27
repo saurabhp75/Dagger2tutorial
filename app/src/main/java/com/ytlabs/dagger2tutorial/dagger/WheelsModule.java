@@ -1,4 +1,8 @@
-package com.ytlabs.dagger2tutorial;
+package com.ytlabs.dagger2tutorial.dagger;
+
+import com.ytlabs.dagger2tutorial.car.Rims;
+import com.ytlabs.dagger2tutorial.car.Tires;
+import com.ytlabs.dagger2tutorial.car.Wheels;
 
 import dagger.Module;
 import dagger.Provides;

@@ -1,10 +1,13 @@
-package com.ytlabs.dagger2tutorial;
+package com.ytlabs.dagger2tutorial.dagger;
+
+import com.ytlabs.dagger2tutorial.car.Engine;
+import com.ytlabs.dagger2tutorial.car.PetrolEngine;
 
 import dagger.Binds;
 import dagger.Module;
 
 @Module
-public abstract class PetrolEngineModule {
+public abstract class DieselEngineModule {
 
     // This is better than Provides as no object of PetrolEngineModule is
     // created and no method is called, instead PetrolEngine is instantiated directly

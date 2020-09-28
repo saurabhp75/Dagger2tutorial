@@ -27,10 +27,7 @@ public class MainActivity extends AppCompatActivity {
         // any argument in the constructor.
         // horsepower will be added to the dependency graph and value of 100 will be
         // taken whenever we need an integer.
-        CarComponent component = DaggerCarComponent.builder()
-                .horsePower(150)
-                .engineCapacity(1400)
-                .build();
+        CarComponent component = ((ExampleApp) getApplication()).getAppComponent();
 
         component.inject(this);
         car1.drive();
